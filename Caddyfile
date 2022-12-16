@@ -1,0 +1,4 @@
+($DOMAIN) {
+	reverse_proxy /api/* ($API_URL)
+	reverse_proxy /* ($FRONTEND_URL)
+}
