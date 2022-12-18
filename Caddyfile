@@ -1,4 +1,7 @@
-($DOMAIN) {
-	reverse_proxy /api/* ($API_URL)
-	reverse_proxy /* ($FRONTEND_URL)
+:80 {
+	reverse_proxy / {$FRONTEND_URL}
+	reverse_proxy /index.* {$FRONTEND_URL}
+	reverse_proxy /health {$API_URL}
+	reverse_proxy /sentiment {$API_URL}
+	reverse_proxy /sentiment/explain {$API_URL}
 }
